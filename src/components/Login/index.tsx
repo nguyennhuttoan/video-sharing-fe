@@ -2,20 +2,25 @@ import { Form, Input, Button, Row, Col } from "antd";
 import UserInfo from "../UserInfo";
 import User from "../../types/user.type";
 import { useState } from "react";
+import authService from "../../services/auth.service";
 
 export const Login = () => {
   const [email, setEmail] = useState(localStorage.getItem("email") || "");
 
   const handleLogout = () => {
-    localStorage.setItem("email", "");
+    authService.logout();
     setEmail("");
-    console.log("logout");
   };
 
-  const handleLogin = (values: User) => {
-    localStorage.setItem("email", values.email);
-    setEmail(values.email);
-    console.log("login");
+  const handleLogin = async (values: User) => {
+    const res = await authService.login({
+      email: values.email,
+      password: values.email,
+    });
+
+    if (res) {
+      setEmail(values.email);
+    }
   };
 
   const onFinish = (values: User) => {
