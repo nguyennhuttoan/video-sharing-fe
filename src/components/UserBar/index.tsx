@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import User from "../../types/user.type";
 
-const UserInfo = ({ email }: Partial<User>) => {
+const UserBar = ({ email }: Partial<User>) => {
   return (
     <div
       style={{
@@ -19,4 +19,4 @@ const UserInfo = ({ email }: Partial<User>) => {
   );
 };
 
-export default UserInfo;
+export default UserBar;

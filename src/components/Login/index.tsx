@@ -1,5 +1,5 @@
 import { Form, Input, Button, Row, Col } from "antd";
-import UserInfo from "../UserInfo";
+import UserBar from "../UserBar";
 import User from "../../types/user.type";
 import { useState } from "react";
 import authService from "../../services/auth.service";
@@ -29,7 +29,7 @@ export const Login = () => {
 
   return email ? (
     <div style={{ display: "flex" }}>
-      <UserInfo email={email} />
+      <UserBar email={email} />
       <Button danger onClick={handleLogout}>
         Logout
       </Button>
