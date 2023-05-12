@@ -18,7 +18,7 @@ class AuthService {
       })
       .catch((err: AxiosError) => {
         localStorage.setItem("email", "");
-        message.error("Login Failed");
+        message.error("Invalid email or password");
         console.error(err.response);
       });
   }
