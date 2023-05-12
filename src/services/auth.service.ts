@@ -9,7 +9,7 @@ class AuthService {
       .post<User>("/auth/login", data)
       .then((response) => {
         if (response.data.token) {
-          localStorage.setItem("token", JSON.stringify(response.data.token));
+          localStorage.setItem("token", response.data.token);
           localStorage.setItem("email", data.email);
           message.success("Login Successfully");
 

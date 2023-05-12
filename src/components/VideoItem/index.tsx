@@ -14,7 +14,7 @@ export const VideoItem = ({ video }: { video: Video }) => {
       </Col>
       <Col span={5} offset={8}>
         <div style={{ textAlign: "left" }}>
-          <h2 style={{ margin: "0 0 8px", color: "#ff4d4f" }}>{title}</h2>
+          <h2 style={{ margin: "0 0 8px" }}>{title}</h2>
           <p style={{ margin: 0 }}>
             <b>Description:</b>
           </p>

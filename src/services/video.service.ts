@@ -1,6 +1,7 @@
 import { AxiosError } from "axios";
 import http from "../http";
 import Video from "../types/video.type";
+import { message } from "antd";
 
 class VideoService {
   getAll() {
@@ -17,8 +18,22 @@ class VideoService {
       });
   }
 
-  create(data: Video) {
-    return http.post<Video>("/video", data);
+  create(data: Video, token: string) {
+    const config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+
+    return http
+      .post<Video>("/video", data, config)
+      .then(() => {
+        message.success("Posted successfully");
+        return true;
+      })
+      .catch((err: AxiosError) => {
+        message.error("An error has been occurred");
+        console.error(err.response);
+        return false;
+      });
   }
 }
 

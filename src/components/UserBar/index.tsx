@@ -1,7 +1,10 @@
 import { Button } from "antd";
 import User from "../../types/user.type";
+import { useNavigate } from "react-router-dom";
 
 const UserBar = ({ email }: Partial<User>) => {
+  const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -14,7 +17,7 @@ const UserBar = ({ email }: Partial<User>) => {
       <div>
         Welcome <b>{email}</b>{" "}
       </div>
-      <Button>Share</Button>
+      <Button onClick={() => navigate("/post")}>Post</Button>
     </div>
   );
 };
