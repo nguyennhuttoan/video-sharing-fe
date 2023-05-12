@@ -20,6 +20,7 @@ export const Post = () => {
     if (result) {
       form.resetFields();
       setLoading(true);
+      back();
     } else {
       setLoading(false);
     }

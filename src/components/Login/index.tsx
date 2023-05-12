@@ -3,13 +3,16 @@ import UserBar from "../UserBar";
 import User from "../../types/user.type";
 import { useState } from "react";
 import authService from "../../services/auth.service";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const [email, setEmail] = useState(localStorage.getItem("email") || "");
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     authService.logout();
     setEmail("");
+    navigate("/");
   };
 
   const handleLogin = async (values: User) => {

@@ -1,8 +1,8 @@
 import "./App.css";
-import Post from "./components/Post";
 import Guard from "./routes/Guard";
 import { Home } from "./routes/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PostVideo from "./routes/PostVideo";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
             path="post"
             element={
               <Guard>
-                <Post />
+                <PostVideo />
               </Guard>
             }
           />
