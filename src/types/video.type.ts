@@ -1,5 +1,5 @@
 export default interface Video {
-  title: string,
-  description: string,
-  url: string
+  title: string;
+  description: string;
+  url: string;
 }

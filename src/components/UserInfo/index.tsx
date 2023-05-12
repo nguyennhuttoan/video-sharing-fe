@@ -2,7 +2,6 @@ import { Button } from "antd";
 import User from "../../types/user.type";
 
 const UserInfo = ({ email }: Partial<User>) => {
-
   return (
     <div
       style={{
