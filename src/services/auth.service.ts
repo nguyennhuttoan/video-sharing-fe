@@ -1,6 +1,7 @@
 import { AxiosError } from "axios";
 import http from "../http";
 import User from "../types/user.type";
+import { message } from "antd";
 
 class AuthService {
   login(data: User) {
@@ -10,12 +11,14 @@ class AuthService {
         if (response.data.token) {
           localStorage.setItem("token", JSON.stringify(response.data.token));
           localStorage.setItem("email", data.email);
+          message.success("Login Successfully");
 
           return true;
         }
       })
       .catch((err: AxiosError) => {
         localStorage.setItem("email", "");
+        message.error("Login Failed");
         console.error(err.response);
       });
   }

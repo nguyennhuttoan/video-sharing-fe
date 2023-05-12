@@ -15,7 +15,7 @@ export const Login = () => {
   const handleLogin = async (values: User) => {
     const res = await authService.login({
       email: values.email,
-      password: values.email,
+      password: values.password,
     });
 
     if (res) {
@@ -56,7 +56,13 @@ export const Login = () => {
         <Col span={9}>
           <Form.Item
             name="password"
-            rules={[{ required: true, message: "Enter a valid password" }]}
+            rules={[
+              {
+                required: true,
+                message: "Enter at least 8 characters",
+                min: 8,
+              },
+            ]}
             style={{ marginBottom: 0 }}
           >
             <Input.Password placeholder="Password" />

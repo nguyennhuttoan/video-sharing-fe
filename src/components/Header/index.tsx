@@ -10,7 +10,7 @@ export const Header = () => {
             <h1>Video Sharing</h1>
           </div>
         </Col>
-        <Col span={9} offset={3}>
+        <Col span={10} offset={2}>
           <Login />
         </Col>
       </Row>
