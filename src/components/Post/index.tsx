@@ -46,9 +46,9 @@ export const Post = () => {
       labelAlign="left"
     >
       <Form.Item
-        label="Movie Title"
+        label="Video Title"
         name="title"
-        rules={[{ required: true, message: "Please input movie title!" }]}
+        rules={[{ required: true, message: "Input a video title" }]}
       >
         <Input />
       </Form.Item>
@@ -56,10 +56,10 @@ export const Post = () => {
         label="Youtube URL"
         name="url"
         rules={[
-          { required: true, message: "Please input movie URL!" },
+          { required: true, message: "Input valid YouTube URL" },
           {
             pattern: new RegExp("^(https?://)?(www.youtube.com|youtu.be)/.+$"),
-            message: "Please input a Youtube URL",
+            message: "Input a valid YouTube URL",
           },
         ]}
       >
@@ -68,7 +68,7 @@ export const Post = () => {
       <Form.Item
         label="Description"
         name="description"
-        rules={[{ required: true, message: "Please input movie description!" }]}
+        rules={[{ required: true, message: "Input valid YouTube description" }]}
       >
         <Input.TextArea />
       </Form.Item>
@@ -76,7 +76,7 @@ export const Post = () => {
       <Form.Item wrapperCol={{ span: 24 }}>
         <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
           <Button danger onClick={back}>
-            <ArrowLeftOutlined /> Back to Home
+            <ArrowLeftOutlined /> Back
           </Button>
           <Button onClick={formClear}>
             <ReloadOutlined /> Clear
