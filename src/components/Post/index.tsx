@@ -5,20 +5,35 @@ import {
   ReloadOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import videoService from "../../services/video.service";
 import Video from "../../types/video.type";
+import io, { Socket } from "socket.io-client";
 
 export const Post = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
   const [token] = useState(localStorage.getItem("token") || "");
   const [loading, setLoading] = useState(false);
+  const [socket, setSocket] = useState<Socket>();
+
+  const triggerMessage = (values: { message: string; email: string }) => {
+    socket?.emit("message", values);
+  };
+
+  useEffect(() => {
+    const newSocket = io(import.meta.env.VITE_API_WS_URL);
+    setSocket(newSocket);
+  }, [setSocket]);
 
   const onFinish = async (values: Video) => {
     const result = await videoService.create(values, token);
+    const email = localStorage.getItem("email") || "";
+
     if (result) {
       form.resetFields();
+      const notificationMessage = `New video ${values.title} uploaded by ${email}`;
+      triggerMessage({ message: notificationMessage, email });
       setLoading(true);
       back();
     } else {
