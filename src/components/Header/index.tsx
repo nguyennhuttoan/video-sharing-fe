@@ -17,7 +17,7 @@ export const Header = () => {
             </div>
           </Link>
         </Col>
-        <Col span={10} offset={2}>
+        <Col span={9} offset={1}>
           <Login />
         </Col>
       </Row>

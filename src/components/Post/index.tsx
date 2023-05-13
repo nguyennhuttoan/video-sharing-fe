@@ -81,7 +81,12 @@ export const Post = () => {
           <Button onClick={formClear}>
             <ReloadOutlined /> Clear
           </Button>
-          <Button htmlType="submit" type="primary" loading={loading}>
+          <Button
+            style={{ backgroundColor: "black" }}
+            htmlType="submit"
+            type="primary"
+            loading={loading}
+          >
             <CloudUploadOutlined />
             Post
           </Button>
