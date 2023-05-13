@@ -6,13 +6,13 @@ export const VideoItem = ({ video }: { video: Video }) => {
   const { title, description, url } = video;
 
   return (
-    <Row gutter={8} style={{ padding: 16 }} data-testid="movie-item">
+    <Row gutter={10} style={{ padding: 16 }} data-testid="movie-item">
       <Col span={10}>
         <div style={{ textAlign: "right" }}>
-          <ReactPlayer width={560} height={340} url={url} />
+          <ReactPlayer width={426} height={240} url={url} />
         </div>
       </Col>
-      <Col span={5} offset={8}>
+      <Col span={10} offset={3}>
         <div style={{ textAlign: "left" }}>
           <h2 style={{ margin: "0 0 8px" }}>{title}</h2>
           <p style={{ margin: 0 }}>
