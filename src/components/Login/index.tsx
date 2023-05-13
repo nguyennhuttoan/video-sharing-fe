@@ -73,7 +73,11 @@ export const Login = () => {
         </Col>
         <Col span={6}>
           <Form.Item wrapperCol={{ span: 24 }} style={{ marginBottom: 0 }}>
-            <Button type="primary" htmlType="submit">
+            <Button
+              style={{ backgroundColor: "green" }}
+              type="primary"
+              htmlType="submit"
+            >
               Login/Register
             </Button>
           </Form.Item>
