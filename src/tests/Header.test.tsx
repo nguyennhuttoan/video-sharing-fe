@@ -3,7 +3,7 @@ import ShallowRenderer from "react-test-renderer/shallow";
 import Header from "../components/Header";
 
 describe("Header", () => {
-  test("should show a h1 with the text 'Video Sharing'", () => {
+  test("should render and match the snapshot", () => {
     const renderer = ShallowRenderer.createRenderer();
     renderer.render(<Header />);
     const result = renderer.getRenderOutput();
