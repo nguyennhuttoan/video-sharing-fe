@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header > should show a h1 with the text 'Video Sharing' 1`] = `
+<React.Fragment>
+  <Row
+    align="middle"
+  >
+    <Col
+      offset={3}
+      span={9}
+    >
+      <div
+        style={
+          {
+            "display": "flex",
+          }
+        }
+      >
+        <h1>
+          Video Sharing
+        </h1>
+      </div>
+    </Col>
+    <Col
+      offset={2}
+      span={10}
+    >
+      <Login />
+    </Col>
+  </Row>
+  <Divider
+    style={
+      {
+        "marginTop": 5,
+      }
+    }
+  />
+</React.Fragment>
+`;
